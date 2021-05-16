@@ -94,18 +94,19 @@ print_r($upper_case_programming_languages);
 
 echo PHP_EOL;
 
-print("#####q9#####".PHP_EOL);
-$names = ["田中", "佐藤", "佐々木", "高橋"];
-
-     # 以下に回答を記載
-//配列内に会員NO.を付け加える
-$name = [];
-foreach ($names as $key => $name) {
-  echo "会員No." . ($key + 1) . $name . PHP_EOL;
-}
-echo PHP_EOL;
-
+// print("#####q9#####".PHP_EOL);
+// $names = ["田中", "佐藤", "佐々木", "高橋"];
 //
+//      # 以下に回答を記載
+// //配列内に会員NO.を付け加える
+// $name = [];
+// foreach ($names as $key => $name) {
+//   echo "会員No." . ($key + 1) . $name . PHP_EOL;
+// }
+// print_r($name);
+//
+// echo PHP_EOL;
+
 print("#####q10#####".PHP_EOL);
 $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","うに丼","高級なうに"];
 
@@ -119,14 +120,40 @@ foreach ($foods as $food) {
   }
 }
 echo PHP_EOL;
-//
+
 // print("#####q11#####".PHP_EOL);
 // $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
 //
 //   # 以下に回答を記載
+//   //配列をフラットにする
+// $new_sports = [];
+// foreach ($sports as $sport) {
+//   //is_arrayは、$valueが配列の時にtrueを返す
+//   if (is_array($sport)) {
+//     //配列の時
+//     foreach ($sport as $s) {
+//       $new_sports[] = $s;
+//     }
+//   } else {
+//     $new_sports[] = $sport;
+//   }
+// }
+// // print_r(array_unique($new_sports));
+// //
+// // //重複を削除
+// // $unique_sports = array_unique($new_sports);
+// // print_r($unique_sports);
+// echo "ユーザーの趣味一覧" . PHP_EOL;
+// //配列のキーの振り直し
+// $sports_values = array_values($unique_sports);
+// print_r($sports_values);
+//
+// foreach ($new_sports  as $key => $s) {
+//   echo "会員No." . ($key + 1) . $s . PHP_EOL;
+// }
 //
 // echo PHP_EOL;
-//
+
 print("#####q12#####".PHP_EOL);
 $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 
@@ -135,7 +162,7 @@ $data = [ "user" => [ "name" => "satou", "age" => 33 ] ];
 echo($data["user"]["name"]);
 
 echo PHP_EOL;
-//
+
 print("#####q13#####".PHP_EOL);
 $user_data = [ "name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = [ "age" => 32, "address" => "沖縄" ];
@@ -144,33 +171,55 @@ $update_data = [ "age" => 32, "address" => "沖縄" ];
 // $user_dataに$update_dataの内容を上書きして出力
 print_r(array_replace($user_data, $update_data));
 echo PHP_EOL;
-//
-// print("#####q14#####".PHP_EOL);
-// $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
+
+ print("#####q14#####".PHP_EOL);
+ $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
 
   # 以下に回答を記載
+  //連想配列からキーを取り出す
+  print_r(array_keys($data));
 
-// echo PHP_EOL;
-//
-// print("#####q15#####".PHP_EOL);
-// $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
-// $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
-//
-//   # 以下に回答を記載
-//
-// echo PHP_EOL;
-//
-// print("#####q16#####".PHP_EOL);
-// $users = [
-//   [ "name" => "satou", "age" => 22 ],
-//   [ "name" => "yamada", "age" => 12 ],
-//   [ "name" => "takahashi", "age" => 32 ],
-//   [ "name" => "nakamura", "age" => 41 ]
-// ];
-//
-//   # 以下に回答を記載
-//
-// echo PHP_EOL;
+ echo PHP_EOL;
+
+ print("#####q15#####".PHP_EOL);
+ $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
+ $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
+
+   # 以下に回答を記載
+//data1 or data2の中にageがあればOK,無ければNG
+ $keys = array_keys($data1);
+
+ if (in_array("age", $keys)){
+   echo ("OK");
+ }else {
+   echo ("NG");
+ }
+echo PHP_EOL;
+
+ $keys = array_keys($data2);
+ //print_r($keys);
+ if (in_array("age", $keys)){
+   echo ("OK");
+ }else {
+   echo ("NG");
+ }
+
+ echo PHP_EOL;
+
+ print("#####q16#####".PHP_EOL);
+ $users = [
+   [ "name" => "satou", "age" => 22 ],
+   [ "name" => "yamada", "age" => 12 ],
+   [ "name" => "takahashi", "age" => 32 ],
+   [ "name" => "nakamura", "age" => 41 ]
+ ];
+
+ # 以下に回答を記載
+ //"私の名前は〜です。年齢は〜歳です。"と表示
+ foreach ($users as $user) {
+   echo "私の名前は" . $user["name"] . "です。年齢は" . $user["age"] . "歳です。" . PHP_EOL;
+ }
+ echo PHP_EOL;
 //
 // print("#####q17#####".PHP_EOL);
 // class User
