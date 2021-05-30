@@ -278,7 +278,7 @@ print("#####q19#####".PHP_EOL);
 class Item{
   # 以下を修正して下さい
 
-   public $name;
+  public $name;
 
   function __construct($book_name){
     $this->name = $book_name;
