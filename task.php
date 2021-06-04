@@ -220,22 +220,22 @@ echo PHP_EOL;
 print("#####q17#####".PHP_EOL);
 class User
 {
-  // property
-   public $name;
-   public $age;
-   public $sex;
+    // property
+    public $name;
+    public $age;
+    public $sex;
 
-   // constructor
-   public function __construct($name, $age, $sex) {
-     $this->name = $name;
-     $this->age = $age;
-     $this->sex = $sex;
-   }
-  public function info() {
-    echo "名前:".$this->name .PHP_EOL;
-    echo "年齢:".$this->age .PHP_EOL;
-    echo "性別:".$this->sex .PHP_EOL;
-  }
+    // constructor
+    public function __construct($name, $age, $sex) {
+       $this->name = $name;
+       $this->age = $age;
+       $this->sex = $sex;
+    }
+    public function info() {
+       echo "名前:".$this->name .PHP_EOL;
+       echo "年齢:".$this->age .PHP_EOL;
+       echo "性別:".$this->sex .PHP_EOL;
+    }
 }
 $user1 = new User("神里",32,"男");
 $user2 = new User("あじー",32,"男");
@@ -248,22 +248,22 @@ echo PHP_EOL;
 print("#####q18#####".PHP_EOL);
 class Man
 {
-  // property
-   public $name;
-   public $age;
+    // property
+    public $name;
+    public $age;
 
-   // constructor
-   public function __construct($name, $age) {
-     $this->name = $name;
-     $this->age = $age;
-   }
-  public function introduce() {
-    if($this->age >= 15){
-      echo "こんにちは、".$this->name."と申します。宜しくお願いいたします。". PHP_EOL;
-    }else {
-      echo "はいさいまいど〜、".$this->name."です！！！" . PHP_EOL;
+    // constructor
+    public function __construct($name, $age) {
+       $this->name = $name;
+       $this->age = $age;
     }
-  }
+    public function introduce() {
+       if($this->age >= 15){
+           echo "こんにちは、".$this->name."と申します。宜しくお願いいたします。". PHP_EOL;
+       }else {
+           echo "はいさいまいど〜、".$this->name."です！！！" . PHP_EOL;
+       }
+    }
 }
 
 $man1 = new Man("あじー",32);
@@ -278,11 +278,11 @@ print("#####q19#####".PHP_EOL);
 class Item{
   # 以下を修正して下さい
 
-  public $name;
+    public $name;
 
-  function __construct($book_name){
-    $this->name = $book_name;
-  }
+    function __construct($book_name){
+       $this->name = $book_name;
+    }
 }
   # 以下は変更しないで下さい
 
@@ -295,34 +295,34 @@ print("#####q20#####".PHP_EOL);
 class Human
 {
 
-  public $name;
-  public $age;
-  // constructor
-  public function __construct($name, $age) {
-    $this->name = $name;
-    $this->age = $age;
-  }
+    public $name;
+    public $age;
+    // constructor
+    public function __construct($name, $age) {
+       $this->name = $name;
+       $this->age = $age;
+    }
 }
 
 class Zoo
 {
-  public $name;
-  public $fee;
+    public $name;
+    public $fee;
 
-  public function __construct($name, $fee) {
-    $this->name = $name;
-    $this->fee = $fee;
+    public function __construct($name, $fee) {
+       $this->name = $name;
+       $this->fee = $fee;
   }
-  public function info_entry_fee($human) {
-    if($human->age <= 3){
-      echo $human->name."さんの入場料金は".$this->fee["infant"]."円です。". PHP_EOL;
-    }elseif($human->age <= 12){
-      echo $human->name."さんの入場料金は".$this->fee["children"]."円です。". PHP_EOL;
-    }elseif($human->age <= 33){
-      echo $human->name."さんの入場料金は".$this->fee["adult"]."円です。". PHP_EOL;
-    }elseif($human->age <= 109){
-    echo $human->name."さんの入場料金は".$this->fee["senior"]."円です。". PHP_EOL;
-    }
+    public function info_entry_fee($human) {
+       if($human->age <= 5){
+           echo $human->name."さんの入場料金は".$this->fee["infant"]."円です。". PHP_EOL;
+       }elseif($human->age <= 12){
+           echo $human->name."さんの入場料金は".$this->fee["children"]."円です。". PHP_EOL;
+       }elseif($human->age <= 64){
+           echo $human->name."さんの入場料金は".$this->fee["adult"]."円です。". PHP_EOL;
+       }elseif($human->age <= 120){
+           echo $human->name."さんの入場料金は".$this->fee["senior"]."円です。". PHP_EOL;
+      }
   }
 }
 
@@ -336,26 +336,31 @@ $human4 = new Human("ぎん",108);
 $humans = [ $human1, $human2, $human3, $human4 ];
 
 foreach($humans as $human){
-  $zoo->info_entry_fee($human);
+    $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
 
 print("#####q21#####".PHP_EOL);
 
-for($i =1; $i<=30; $i++){
-  if($i %21 ==0){
-    echo "FizzHoge" . PHP_EOL;
-  }elseif($i %15 ==0) {
-    echo "FizzBuzz". PHP_EOL;
-  }elseif ($i %7 ==0) {
-    echo "Hoge" . PHP_EOL;
-  }elseif ($i %5 ==0) {
-    echo "Buzz" . PHP_EOL;
-  }elseif ($i %3 ==0){
-    echo "Fizz" . PHP_EOL;
-  }else{
-    echo $i . PHP_EOL;
-  }
+for($i = 1; $i <= 30; $i++){
+    if( $i % 105 == 0) {
+        echo 'FizzBuzzHoge'. PHP_EOL;
+    }elseif($i % 35 == 0 ){
+        echo 'BuzzHoge'. PHP_EOL;
+    }elseif($i % 21 == 0 ){
+        echo 'FizzHoge'. PHP_EOL;
+    }elseif($i % 15 == 0 ){
+        echo 'FizzBuzz'. PHP_EOL;
+    }elseif($i % 7 == 0 ){
+        echo 'Hoge'. PHP_EOL;
+    } elseif($i % 5 == 0){
+        echo 'Buzz'. PHP_EOL;
+    }elseif($i % 3 == 0){
+        echo 'Fizz'. PHP_EOL;
+    }else{
+        echo $i. PHP_EOL;
+    }
 }
+
 ?>
