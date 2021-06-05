@@ -62,8 +62,8 @@ $numbers1 = [1, 2, 3, 4, 5];
      # 以下に回答を記載
 //$number2で$number1の配列に10をかけた数値を出力
 $numbers2 = [];
-foreach ($numbers1 as $number) {
-  $number2[] = $number * 10;
+foreach($numbers1 as $number) {
+    $number2[] = $number * 10;
 }
 print_r($number2);
 
@@ -112,12 +112,12 @@ $foods = ["いか","たこ","うに","しゃけ","うにぎり","うに軍艦","
 
      # 以下に回答を記載
 //うにならば好物です　それ以外はまぁまぁ好きですと出力
-foreach ($foods as $food) {
-  if (strpos($food, "うに") !== false) {
-    echo "好物です" . PHP_EOL;
-  }else {
-    echo "まぁまぁ好きです" . PHP_EOL;
-  }
+foreach($foods as $food) {
+    if(strpos($food, "うに") !== false) {
+        echo "好物です" . PHP_EOL;
+    }else{
+        echo "まぁまぁ好きです" . PHP_EOL;
+    }
 }
 echo PHP_EOL;
 
@@ -127,16 +127,16 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 # 以下に回答を記載
 //配列をフラットにする
 $new_sports = [];
-foreach ($sports as $sport) {
+foreach($sports as $sport) {
   //is_arrayは、$valueが配列の時にtrueを返す
-  if (is_array($sport)) {
+    if(is_array($sport)) {
     //配列の時
-    foreach ($sport as $s) {
-      $new_sports[] = $s;
+    foreach($sport as $s) {
+        $new_sports[] = $s;
     }
-  } else {
-    $new_sports[] = $sport;
-  }
+    }else{
+        $new_sports[] = $sport;
+    }
 }
 //重複を削除
 $unique_sports = array_unique($new_sports);
@@ -144,8 +144,8 @@ $unique_sports = array_unique($new_sports);
 $sports_values = array_values($unique_sports);
 
 echo "ユーザーの趣味一覧" . PHP_EOL;
-foreach ($new_sports  as $key => $s) {
-  echo ("No." . ($key + 1) . $s) . PHP_EOL;
+foreach($new_sports  as $key => $s) {
+    echo ("No." . ($key + 1) . $s) . PHP_EOL;
 }
 
 echo PHP_EOL;
@@ -168,54 +168,54 @@ $update_data = [ "age" => 32, "address" => "沖縄" ];
 print_r(array_replace($user_data, $update_data));
 echo PHP_EOL;
 
- print("#####q14#####".PHP_EOL);
- $data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
+print("#####q14#####".PHP_EOL);
+$data = [ "name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com" ];
 
-  # 以下に回答を記載
-  //連想配列からキーを取り出す
-  print_r(array_values($data));
+# 以下に回答を記載
+//連想配列からキーを取り出す
+print_r(array_values($data));
 
- echo PHP_EOL;
-
- print("#####q15#####".PHP_EOL);
- $data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
- $data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
-
-   # 以下に回答を記載
-//data1 or data2の中にageがあればOK,無ければNG
- $keys = array_keys($data1);
-
- if (in_array("age", $keys)){
-   echo ("OK");
- }else {
-   echo ("NG");
- }
 echo PHP_EOL;
 
- $keys = array_keys($data2);
- //print_r($keys);
- if (in_array("age", $keys)){
-   echo ("OK");
- }else {
-   echo ("NG");
- }
+print("#####q15#####".PHP_EOL);
+$data1 = [ "name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin" ];
+$data2 = [ "name" => "yamada", "hobby" => "baseball", "role" => "normal" ];
 
- echo PHP_EOL;
+# 以下に回答を記載
+//data1 or data2の中にageがあればOK,無ければNG
+$keys = array_keys($data1);
 
- print("#####q16#####".PHP_EOL);
- $users = [
-   [ "name" => "satou", "age" => 22 ],
-   [ "name" => "yamada", "age" => 12 ],
-   [ "name" => "takahashi", "age" => 32 ],
-   [ "name" => "nakamura", "age" => 41 ]
- ];
+if(in_array("age", $keys)){
+    echo ("OK");
+}else{
+    echo ("NG");
+}
+echo PHP_EOL;
 
- # 以下に回答を記載
- //"私の名前は〜です。年齢は〜歳です。"と表示
- foreach ($users as $user) {
-   echo "私の名前は" . $user["name"] . "です。年齢は" . $user["age"] . "歳です。" . PHP_EOL;
- }
- echo PHP_EOL;
+$keys = array_keys($data2);
+//print_r($keys);
+if(in_array("age", $keys)){
+    echo ("OK");
+}else{
+    echo ("NG");
+}
+
+echo PHP_EOL;
+
+print("#####q16#####".PHP_EOL);
+$users = [
+    [ "name" => "satou", "age" => 22 ],
+    [ "name" => "yamada", "age" => 12 ],
+    [ "name" => "takahashi", "age" => 32 ],
+    [ "name" => "nakamura", "age" => 41 ]
+];
+
+# 以下に回答を記載
+//"私の名前は〜です。年齢は〜歳です。"と表示
+foreach($users as $user) {
+    echo "私の名前は" . $user["name"] . "です。年齢は" . $user["age"] . "歳です。" . PHP_EOL;
+}
+echo PHP_EOL;
 //
 print("#####q17#####".PHP_EOL);
 class User
@@ -227,14 +227,14 @@ class User
 
     // constructor
     public function __construct($name, $age, $sex) {
-       $this->name = $name;
-       $this->age = $age;
-       $this->sex = $sex;
+        $this->name = $name;
+        $this->age = $age;
+        $this->sex = $sex;
     }
     public function info() {
-       echo "名前:".$this->name .PHP_EOL;
-       echo "年齢:".$this->age .PHP_EOL;
-       echo "性別:".$this->sex .PHP_EOL;
+        echo "名前:".$this->name .PHP_EOL;
+        echo "年齢:".$this->age .PHP_EOL;
+        echo "性別:".$this->sex .PHP_EOL;
     }
 }
 $user1 = new User("神里",32,"男");
@@ -254,15 +254,15 @@ class Man
 
     // constructor
     public function __construct($name, $age) {
-       $this->name = $name;
-       $this->age = $age;
+        $this->name = $name;
+        $this->age = $age;
     }
     public function introduce() {
-       if($this->age >= 15){
-           echo "こんにちは、".$this->name."と申します。宜しくお願いいたします。". PHP_EOL;
-       }else {
-           echo "はいさいまいど〜、".$this->name."です！！！" . PHP_EOL;
-       }
+        if($this->age >= 15){
+            echo "こんにちは、".$this->name."と申します。宜しくお願いいたします。". PHP_EOL;
+        }else {
+            echo "はいさいまいど〜、".$this->name."です！！！" . PHP_EOL;
+        }
     }
 }
 
@@ -281,7 +281,7 @@ class Item{
     public $name;
 
     function __construct($book_name){
-       $this->name = $book_name;
+        $this->name = $book_name;
     }
 }
   # 以下は変更しないで下さい
@@ -299,8 +299,8 @@ class Human
     public $age;
     // constructor
     public function __construct($name, $age) {
-       $this->name = $name;
-       $this->age = $age;
+        $this->name = $name;
+        $this->age = $age;
     }
 }
 
@@ -310,20 +310,20 @@ class Zoo
     public $fee;
 
     public function __construct($name, $fee) {
-       $this->name = $name;
-       $this->fee = $fee;
-  }
+        $this->name = $name;
+        $this->fee = $fee;
+    }
     public function info_entry_fee($human) {
-       if($human->age <= 5){
-           echo $human->name."さんの入場料金は".$this->fee["infant"]."円です。". PHP_EOL;
-       }elseif($human->age <= 12){
-           echo $human->name."さんの入場料金は".$this->fee["children"]."円です。". PHP_EOL;
-       }elseif($human->age <= 64){
-           echo $human->name."さんの入場料金は".$this->fee["adult"]."円です。". PHP_EOL;
-       }elseif($human->age <= 120){
-           echo $human->name."さんの入場料金は".$this->fee["senior"]."円です。". PHP_EOL;
-      }
-  }
+        if($human->age <= 5){
+            echo $human->name."さんの入場料金は".$this->fee["infant"]."円です。". PHP_EOL;
+        }elseif($human->age <= 12){
+            echo $human->name."さんの入場料金は".$this->fee["children"]."円です。". PHP_EOL;
+        }elseif($human->age <= 64){
+            echo $human->name."さんの入場料金は".$this->fee["adult"]."円です。". PHP_EOL;
+        }elseif($human->age <= 120){
+            echo $human->name."さんの入場料金は".$this->fee["senior"]."円です。". PHP_EOL;
+        }
+    }
 }
 
 $zoo = new Zoo("旭山動物園",[ "infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
@@ -335,8 +335,8 @@ $human4 = new Human("ぎん",108);
 
 $humans = [ $human1, $human2, $human3, $human4 ];
 
-foreach($humans as $human){
-    $zoo->info_entry_fee($human);
+    foreach($humans as $human){
+        $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
